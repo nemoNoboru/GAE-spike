@@ -1,0 +1,14 @@
+{% extends "templates/index.html" %}
+{% block head %}
+  :: new thread
+{% endblock %}
+{% block body %}
+<div class="panel-container">
+  <form method="post" class="panel" enctype="multipart/form-data">
+    <input type="file" name="pic" accept="image/*">
+    <input class="titulo editable" placeholder="title" name="title"/>
+    <textarea class="body editable" placeholder="text" rows="1" name="body"></textarea>
+    <input class="button" type='submit' value="Save"/>
+  </form>
+</div>
+{% endblock %}

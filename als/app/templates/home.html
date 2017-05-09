@@ -1,0 +1,17 @@
+{% extends "templates/index.html" %}
+
+{% block body %}
+{% for thread in threads %}
+<a href="/thread/detail?key={{thread.key.id()}}">
+<div class="threads">
+  <img src='data:image/png;base64,{{thread.image.encode("base64")}}' class="img">
+  <div class="thread">
+    <div class="titulo">{{thread.title}}</div>
+    <div class="body">
+      {{thread.body}}
+    </div>
+  </div>
+</div>
+</a>
+{% endfor %}
+{% endblock %}

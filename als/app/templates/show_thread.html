@@ -1,0 +1,37 @@
+{% extends "templates/index.html" %}
+
+{% block body %}
+<div class="panel-container">
+  <form method="post" class="panel" enctype="multipart/form-data">
+    <h1>Reply to thread {{ thread.key.id() }}</h1>
+    <input type="file" name="pic" accept="image/*">
+    <input type="hidden" name="thread" value="{{ thread.key.id() }}">
+    <input class="titulo editable" placeholder="title" name="title"/>
+    <textarea class="body editable" placeholder="text" rows="1" name="body"></textarea>
+    <input class="button" type='submit' value="Save"/>
+  </form>
+</div>
+<div class="threads">
+  <img src='data:image/png;base64,{{thread.image.encode("base64")}}' class="img">
+  <div class="thread">
+    <div class="titulo">{{thread.title}}</div>
+    <div class="body">
+      {{thread.body}}
+    </div>
+  </div>
+</div>
+
+{% for reply in replies %}
+<div class="threads">
+  {% if reply.image %}
+  <img src='data:image/png;base64,{{reply.image.encode("base64")}}' class="img"/>
+  {% endif %}
+  <div class="thread">
+    <div class="titulo">{{reply.title}}</div>
+    <div class="body">
+      {{reply.body}}
+    </div>
+  </div>
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,157 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body{
+  background-color: #fbfbfb;
+}
+
+.topbar {
+  display: flex;
+  position: fixed;
+  flex: 1;
+  justify-content: center;
+  color: #000;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+}
+
+.logo {
+  font-size: 2em;
+}
+
+.logo-container{
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+.logo-text{
+  margin-top: 4px;
+  font-size: 3em;
+  font-family: 'Megrim', cursive;
+}
+
+.logo-text a {
+  text-decoration: none;
+  color: #000;
+}
+
+.pull-right{
+  display: flex;
+  align-content: flex-end;
+  justify-content: flex-end;
+}
+
+.topbar-item a{
+  text-decoration: none;
+  color: #000;
+}
+
+.topbar-item {
+  font-family: 'Arvo', serif;
+  font-weight: bold;
+  height: 70px;
+  padding: 30px;
+  justify-content: center;
+  align-content: center;
+  transition: border-bottom 0.1s;
+}
+
+.topbar-item:hover {
+  height: 20px;
+  padding-bottom: 9.5px;
+  border-bottom: 10px solid #e6e6e6;
+}
+.space {
+  padding-top: 130px;
+}
+.threads{
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.panel-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+}
+
+.panel {
+  flex-direction: column;
+  padding: 40px;
+  display: flex;
+  width: 60%;
+  background-color: #fff;
+}
+
+.panel > * {
+  margin: 8px;
+  padding: 10px;
+}
+
+.editable {
+  border: 0px;
+  border-bottom: 3px solid #f4f4f4;
+}
+
+.thread {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  background-color: #fff;
+}
+
+.titulo {
+  font-family: 'Arvo', serif;
+  font-size: 2.827em;
+}
+
+.img {
+  float: left;
+  display: flex;
+  max-width: 40%;
+  min-height: 45%;
+
+}
+
+.body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.414em;
+}
+
+.button {
+  margin:15px;
+  font-family: 'Open Sans', cursive;
+  font-size: 1.414em;
+  border-radius: 3px;
+  border: 0px;
+  color: #000;
+  background-color: #f6f6f6;
+  transition: all 0.6s;
+}
+
+.button:hover {
+  background-color: #d6d6d6;
+}
+
+@media (max-width:500px) {
+  .img {
+    width: 100%;
+  }
+  .threads {
+    width: 100%;
+  }
+  .thread {
+    max-width: 100%;
+  }
+}
