@@ -7,10 +7,8 @@ import webapp2
 class ThreadDetail(webapp2.RequestHandler):
     def get(self):
         # serve a form to create replies, the thread and all the replies
-        print self.request.get('key')
         thread = Thread.get_by_id(int(self.request.get('key')))
-        print thread
-        replies = Reply.query(Reply.thread == thread.key)
+        replies = Reply.query(Reply.thread == thread.key).order(Reply.timestamp)
 
         to_template = {'thread':thread, 'replies':replies}
 

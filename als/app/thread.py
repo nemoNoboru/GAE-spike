@@ -8,6 +8,7 @@ class Thread(ndb.Model):
 
 class Reply(ndb.Model):
     thread = ndb.KeyProperty(kind=Thread)
+    title = ndb.StringProperty(required = False)
     body = ndb.StringProperty(required = True)
     timestamp = ndb.DateTimeProperty(auto_now = True)
     image = ndb.BlobProperty(required = False)

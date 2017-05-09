@@ -18,20 +18,24 @@
     <div class="body">
       {{thread.body}}
     </div>
+    <hr/>
+    {% for reply in replies %}
+    <div class="reply">
+      {% if reply.image %}
+      <img src='data:image/png;base64,{{reply.image.encode("base64")}}' class="img"/>
+      {% endif %}
+      <div class="thread">
+        {% if reply.title %}
+        <div class="titulo">{{reply.title}}</div>
+        {% endif %}
+        <div class="body">
+          {{reply.body}}
+        </div>
+      </div>
+    </div>
+    <hr/>
+    {% endfor %}
   </div>
 </div>
 
-{% for reply in replies %}
-<div class="threads">
-  {% if reply.image %}
-  <img src='data:image/png;base64,{{reply.image.encode("base64")}}' class="img"/>
-  {% endif %}
-  <div class="thread">
-    <div class="titulo">{{reply.title}}</div>
-    <div class="body">
-      {{reply.body}}
-    </div>
-  </div>
-</div>
-{% endfor %}
 {% endblock %}
